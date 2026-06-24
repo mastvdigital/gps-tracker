@@ -21,18 +21,11 @@ const vehicleIcons = {
     })
 };
 
-const ws = new WebSocket(`${location.protocol === 'https:' ? 'wss:' : 'ws:'}//${location.hostname}/ws/live`);
+const socket = io();
 
-ws.onmessage = (event) => {
-    const msg = JSON.parse(event.data);
-    if (msg.type === 'vehicles') {
-        updateVehicles(msg.data);
-    }
-};
-
-ws.onclose = () => {
-    setTimeout(() => location.reload(), 3000);
-};
+socket.on('vehicles', (vehicles) => {
+    updateVehicles(vehicles);
+});
 
 function updateVehicles(vehicles) {
     const list = document.getElementById('vehicle-list');
