@@ -1,0 +1,57 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; background: #0f0f0f; color: #e0e0e0; }
+
+#sidebar {
+    width: 320px;
+    background: #1a1a2e;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid #16213e;
+}
+
+#sidebar h2 {
+    color: #00d4ff;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#vehicle-list .vehicle-card {
+    background: #16213e;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 3px solid #00d4ff;
+    transition: 0.3s;
+}
+
+#vehicle-list .vehicle-card:hover {
+    background: #0f3460;
+    transform: translateX(3px);
+}
+
+#vehicle-list .vehicle-card .name {
+    font-weight: bold;
+    color: #00d4ff;
+    font-size: 14px;
+}
+
+#vehicle-list .vehicle-card .info {
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-top: 4px;
+}
+
+#vehicle-list .vehicle-card .speed {
+    color: #4ecca3;
+    font-weight: bold;
+}
+
+.ignition-on { color: #4ecca3; }
+.ignition-off { color: #ff6b6b; }
+
+#map {
+    flex: 1;
+    height: 100vh;
+}
